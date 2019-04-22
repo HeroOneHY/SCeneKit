@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <SceneKit/SceneKit.h>
+
 @interface ViewController ()
 
 @end
@@ -18,6 +19,16 @@
     [super viewDidLoad];
     // 创建游戏专用视图
     SCNView *scnView = [[SCNView alloc]initWithFrame:self.view.bounds];
+    
+    // 截屏
+   // UIImage *image = [scnView snapshot];
+//    // 设置游戏帧率
+//    scnView.preferredFramesPerSecond = 30;
+//    // 打开统计菜单
+ //   scnView.showsStatistics = true;
+  
+    // 显示坐标系 失败
+    scnView.debugOptions = SCNDebugOptionShowCameras;
     // 创建一个场景,系统默认是没有的
     scnView.scene = [SCNScene scene];
     // 先设置一个颜色看看游戏引擎有没有加载
@@ -27,12 +38,12 @@
     
     SCNNode *textNode = [SCNNode node];
 
-    SCNText *text = [SCNText textWithString:@"闫贺大傻逼" extrusionDepth:0.03]; //extrusionDepth是字体的高度，0.0就是2d字
+    SCNText *text = [SCNText textWithString:@"闫贺贺大傻逼" extrusionDepth:0.03]; //extrusionDepth是字体的高度，0.0就是2d字
    
     textNode.geometry = text; //geometry 几何形状
    // text.firstMaterial.diffuse.contents = [UIColor redColor];
     // 设置字体大小
-    text.font = [UIFont systemFontOfSize:0.25];
+    text.font = [UIFont systemFontOfSize:0.15];
    // 把这个文字节点添加到游戏场景的根节点上
     [scnView.scene.rootNode addChildNode:textNode];
 //   // 允许用户操作摄像机,先不解释
