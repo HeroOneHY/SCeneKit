@@ -37,7 +37,8 @@
     [self.view addSubview:scnView];
     
     SCNNode *textNode = [SCNNode node];
-
+//    textNode.scale = SCNVector3Make(0.1, 0.1, 0.1); 没有开启camera不能设置
+    
     SCNText *text = [SCNText textWithString:@"闫贺贺大傻逼" extrusionDepth:0.03]; //extrusionDepth是字体的高度，0.0就是2d字
    
     textNode.geometry = text; //geometry 几何形状
