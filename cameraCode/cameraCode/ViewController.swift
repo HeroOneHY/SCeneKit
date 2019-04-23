@@ -45,6 +45,24 @@ class ViewController: UIViewController {
         cameraNode.camera = camera
         cameraNode.position = SCNVector3Make(0, 0, 60)
         scnView.scene?.rootNode.addChildNode(cameraNode)
+        
+        /*
+        //SCNAction添加旋转动作
+        let customAction = SCNAction.rotateBy(x: 0, y: 1, z: 0, duration: 1);
+        
+        //let repeatAction = SCNAction.repeat(customAction, count:100);
+         let repeatAction = SCNAction.repeatForever(customAction);
+        boxNode1.runAction(repeatAction);
+        */
+        let animation = CABasicAnimation(keyPath: "position")
+        //开始的位置
+        animation.fromValue = CGPoint(x: 0, y: 0)
+        //移动到的位置
+        animation.toValue = CGPoint(x: 10, y: 20)
+        //持续时间
+        animation.duration = 3
+       
+        boxNode1.addAnimation(animation, forKey: "my_position")
 
         // Do any additional setup after loading the view, typically from a nib.
     }
