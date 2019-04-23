@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SceneKitRoationDemo
+
+  Created by tianpengfei on 16/5/6.
+  Copyright © 2016年 tianpengfei. All rights reserved.
+*/
+
+"normalRotation" = "正常旋转";
+"mathRotation" = "数学方法旋转";
+"SCNActionRotation" = "SCNAction 旋转";
+"rotationDemo" = "旋转 示例代码";
